@@ -1,9 +1,17 @@
-package com.Agents.ExpenseTracker;
+package com.Agents.ExpenseTrackerAgent;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.ExpenseTracker.Expense;
+import com.ExpenseTracker.ExpenseTrackerCore;
+import com.ExpenseTracker.ExpenseTrackerStateManager;
+import com.ExpenseTracker.Person;
+import com.ExpenseTracker.Report;
+import com.ExpenseTracker.ReportStateManager;
+
 import com.google.adk.agents.BaseAgent;
 import com.google.adk.agents.LlmAgent;
 import com.google.adk.tools.FunctionTool;

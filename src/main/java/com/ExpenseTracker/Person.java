@@ -1,4 +1,4 @@
-package com.Agents.ExpenseTracker;
+package com.ExpenseTracker;
 
 import java.util.HashMap;
 import java.util.Map;

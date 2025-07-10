@@ -1,4 +1,4 @@
-package com.Agents.ExpenseTracker;
+package com.ExpenseTracker;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +13,9 @@ public class Main {
     static Report report = new Report();
 
     public static void main(String[] args) {
+
+
+
         // Dynamic generation of random transactions
         // Prepare 10 unique people
         List<String> names = new ArrayList<>();
@@ -73,6 +76,8 @@ public class Main {
         System.out.println(report.getExpenseLog(etCore.getExpenseSession()));
         System.out.println("\n\n\n\n");
         System.out.println(report.getDetailedBalances(etCore.getCandidateExpenses()));
+
+        
     }
 
 }

@@ -1,4 +1,4 @@
-package com.Agents.ExpenseTracker;
+package com.ExpenseTracker;
 
 import java.util.ArrayList;
 import java.util.List;
