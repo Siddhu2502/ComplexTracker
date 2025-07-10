@@ -1,10 +1,13 @@
-package com.ExpenseTracker;
+package com.ExpenseTracker.Core;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
+
+import com.ExpenseTracker.Model.Report;
+
 import java.util.HashSet;
 import java.util.Random;
 
@@ -13,8 +16,6 @@ public class Main {
     static Report report = new Report();
 
     public static void main(String[] args) {
-
-
 
         // Dynamic generation of random transactions
         // Prepare 10 unique people
@@ -77,7 +78,7 @@ public class Main {
         System.out.println("\n\n\n\n");
         System.out.println(report.getDetailedBalances(etCore.getCandidateExpenses()));
 
-        
+
     }
 
 }

@@ -1,23 +1,23 @@
-package com.Agents.ExpenseTrackerAgent;
+package com.ExpenseTracker.agents.expensetracker;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.ExpenseTracker.Expense;
-import com.ExpenseTracker.ExpenseTrackerCore;
-import com.ExpenseTracker.ExpenseTrackerStateManager;
-import com.ExpenseTracker.Person;
-import com.ExpenseTracker.Report;
-import com.ExpenseTracker.ReportStateManager;
-
+import com.ExpenseTracker.Core.Expense;
+import com.ExpenseTracker.Core.ExpenseTrackerCore;
+import com.ExpenseTracker.Model.Person;
+import com.ExpenseTracker.Model.Report;
+import com.ExpenseTracker.state.ExpenseTrackerStateManager;
+import com.ExpenseTracker.state.ReportStateManager;
 import com.google.adk.agents.BaseAgent;
 import com.google.adk.agents.LlmAgent;
 import com.google.adk.tools.FunctionTool;
 import com.google.adk.tools.Annotations.Schema;
 
 public class ExpenseTrackerAgent {
+    
     private static final String AGENT_NAME = "ExpenseTrackerAgent";
     private static final String AGENT_DESCRIPTION = "An agent that tracks expenses and balances among friends.";
     private static final String GEMINI_MODEL = "gemini-1.5-flash";
@@ -27,9 +27,9 @@ public class ExpenseTrackerAgent {
     private static final String LOG_EMPTY = "The transaction log is empty!.";
 
 
-    public static final BaseAgent rootAgent = iniAgent();
+    public static final BaseAgent ROOT_AGENT = iniAgent();
 
-    private static String agentInstruction = """
+    private static String AGENT_INSTRUCTION = """
             You are an expense tracking assistant.
             When the user provides details about an expense, call the `addExpense` function.
             When the user asks for the REPORT, "balances", or "who owes what", call the `getDetailedBalances` function.
@@ -61,7 +61,7 @@ public class ExpenseTrackerAgent {
                 .name(AGENT_NAME)
                 .model(GEMINI_MODEL)
                 .description(AGENT_DESCRIPTION)
-                .instruction(agentInstruction)
+                .instruction(AGENT_INSTRUCTION)
                 .tools(
                         FunctionTool.create(ExpenseTrackerAgent.class, "addExpense"),
                         FunctionTool.create(ExpenseTrackerAgent.class, "getDetailedBalances"),

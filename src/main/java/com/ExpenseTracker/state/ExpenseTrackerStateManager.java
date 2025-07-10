@@ -1,4 +1,6 @@
-package com.ExpenseTracker;
+package com.ExpenseTracker.state;
+
+import com.ExpenseTracker.Core.ExpenseTrackerCore;
 
 // This class ensures we only ever have ONE instance of our expense tracker core logic.
 public final class ExpenseTrackerStateManager {

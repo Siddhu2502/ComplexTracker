@@ -1,4 +1,6 @@
-package com.ExpenseTracker;
+package com.ExpenseTracker.state;
+
+import com.ExpenseTracker.Model.Report;
 
 // This class manages the state of the report, ensuring that there is a single instance
 // of the report throughout the application lifecycle.

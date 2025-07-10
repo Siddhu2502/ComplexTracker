@@ -1,8 +1,10 @@
-package com.ExpenseTracker;
+package com.ExpenseTracker.Model;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import com.ExpenseTracker.Core.Expense;
 
 public class Report {
     private ArrayList<Person> balances;

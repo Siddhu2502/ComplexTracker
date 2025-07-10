@@ -1,8 +1,10 @@
-package com.ExpenseTracker;
+package com.ExpenseTracker.Core;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
+import com.ExpenseTracker.Model.Person;
 
 public class ExpenseTrackerCore {
 
