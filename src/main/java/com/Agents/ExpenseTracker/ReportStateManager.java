@@ -1,4 +1,4 @@
-package com.agents.ExpenseTracker;
+package com.Agents.ExpenseTracker;
 
 // This class manages the state of the report, ensuring that there is a single instance
 // of the report throughout the application lifecycle.

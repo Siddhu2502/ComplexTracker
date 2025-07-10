@@ -1,4 +1,4 @@
-package com.agents.ExpenseTracker;
+package com.Agents.ExpenseTracker;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -16,7 +16,7 @@ public class Main {
         // Dynamic generation of random transactions
         // Prepare 10 unique people
         List<String> names = new ArrayList<>();
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 20; i++) {
             names.add("Person" + i);
         }
 

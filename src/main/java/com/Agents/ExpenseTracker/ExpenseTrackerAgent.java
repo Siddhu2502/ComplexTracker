@@ -1,4 +1,4 @@
-package com.agents.ExpenseTracker;
+package com.Agents.ExpenseTracker;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,13 +13,18 @@ public class ExpenseTrackerAgent {
     private static final String AGENT_NAME = "ExpenseTrackerAgent";
     private static final String AGENT_DESCRIPTION = "An agent that tracks expenses and balances among friends.";
     private static final String GEMINI_MODEL = "gemini-1.5-flash";
+    private static final String STATUS = "status";
+    private static final String SUCCESS = "success";
+    private static final String REPORT = "report";
+    private static final String LOG_EMPTY = "The transaction log is empty!.";
+
 
     public static final BaseAgent rootAgent = iniAgent();
 
     private static String agentInstruction = """
             You are an expense tracking assistant.
             When the user provides details about an expense, call the `addExpense` function.
-            When the user asks for the "report", "balances", or "who owes what", call the `getDetailedBalances` function.
+            When the user asks for the REPORT, "balances", or "who owes what", call the `getDetailedBalances` function.
             When the user asks for the "log" or "transaction history", call the `getSessionLog` function.
             Present the data you receive from the tools clearly to the user.
 
@@ -82,7 +87,7 @@ public class ExpenseTrackerAgent {
 
 
         if (log.isEmpty()) {
-            return Map.of("status", "success", "report", "The transaction log is currently empty.");
+            return Map.of(STATUS, SUCCESS, REPORT, LOG_EMPTY);
         }
 
         List<String> logEntries = new ArrayList<>();
@@ -94,12 +99,12 @@ public class ExpenseTrackerAgent {
 
         logEntries.add(logReport.getExpenseLog(log));
 
-        return Map.of("status", "success", "report", String.join("\n", logEntries));
+        return Map.of(STATUS, SUCCESS, REPORT, String.join("\n", logEntries));
     }
 
     /**
      * Calculates and retrieves the final balance report, showing exactly who owes money to whom.
-     * Call this when the user asks for the "report" or "balances".
+     * Call this when the user asks for the REPORT or "balances".
      */
     public static Map<String, String> getDetailedBalances() {
         ExpenseTrackerCore etCore = ExpenseTrackerStateManager.getInstance().getExpenseTrackerCore();
@@ -109,7 +114,7 @@ public class ExpenseTrackerAgent {
 
 
         if (balances.isEmpty()) {
-            return Map.of("status", "success", "report", "All debts are settled. No data found.");
+            return Map.of(STATUS, SUCCESS, REPORT, "All debts are settled. No data found.");
         }
 
         List<String> debtList = new ArrayList<>();
@@ -127,9 +132,9 @@ public class ExpenseTrackerAgent {
         debtList.add(report.getDetailedBalances(balances));
 
         if (debtList.isEmpty()) {
-            return Map.of("status", "success", "report", "All debts are settled.");
+            return Map.of(STATUS, SUCCESS, REPORT, "All debts are settled.");
         } else {
-            return Map.of("status", "success", "report", String.join("\n", debtList));
+            return Map.of(STATUS, SUCCESS, REPORT, String.join("\n", debtList));
         }
     }
 }

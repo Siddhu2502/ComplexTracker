@@ -1,4 +1,4 @@
-package com.agents.ExpenseTracker;
+package com.Agents.ExpenseTracker;
 
 import java.util.HashMap;
 
@@ -8,14 +8,14 @@ public class Expense {
     private Integer totalAmount;
     private String payerName;
     private Integer payerAmt;
-    private HashMap<String, Integer> friend_oweMuch;
+    private HashMap<String, Integer> friendOweMuch;
 
-    public Expense(String itemName, Integer totalAmount, String payerName, Integer payerAmt, HashMap<String, Integer> friend_oweMuch){
+    public Expense(String itemName, Integer totalAmount, String payerName, Integer payerAmt, HashMap<String, Integer> friendOweMuch){
         this.itemName = itemName;
         this.totalAmount = totalAmount;
         this.payerName = payerName;
         this.payerAmt = payerAmt;
-        this.friend_oweMuch = friend_oweMuch;
+        this.friendOweMuch = friendOweMuch;
     }
 
 
@@ -73,14 +73,14 @@ public class Expense {
      * @return the friends
      */
     public HashMap<String, Integer> getFriends() {
-        return friend_oweMuch;
+        return friendOweMuch;
     }
 
     /**
      * @param friends the friends to set
      */
-    public void setFriends(HashMap<String, Integer> friend_oweMuch) {
-        this.friend_oweMuch = friend_oweMuch;
+    public void setFriends(HashMap<String, Integer> friendOweMuch) {
+        this.friendOweMuch = friendOweMuch;
     }
 
     
