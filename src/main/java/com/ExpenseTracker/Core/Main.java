@@ -20,7 +20,7 @@ public class Main {
         // Dynamic generation of random transactions
         // Prepare 10 unique people
         List<String> names = new ArrayList<>();
-        for (int i = 1; i <= 20; i++) {
+        for (int i = 1; i <= 10; i++) {
             names.add("Person" + i);
         }
 
@@ -31,8 +31,8 @@ public class Main {
 
         Random rand = new Random();
         int transactionId = 1;
-        int maxPayments = 10;
-        int totalGroups = 50; // number of payer groups
+        int maxPayments = 1000;
+        int totalGroups = 10000; // number of payer groups
 
         // Generate transactions with random group sizes
         for (int g = 0; g < totalGroups; g++) {
@@ -76,7 +76,7 @@ public class Main {
         // Generate the report
         System.out.println(report.getExpenseLog(etCore.getExpenseSession()));
         System.out.println("\n\n\n\n");
-        System.out.println(report.getDetailedBalances(etCore.getCandidateExpenses()));
+        // System.out.println(report.getDetailedBalances(etCore.getCandidateExpenses()));
 
 
     }
