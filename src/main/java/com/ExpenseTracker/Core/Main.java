@@ -12,10 +12,11 @@ import java.util.HashSet;
 import java.util.Random;
 
 public class Main {
-    static ExpenseTrackerCore etCore = new ExpenseTrackerCore();
-    static Report report = new Report();
 
     public static void main(String[] args) {
+
+        ExpenseTrackerCore etCore = new ExpenseTrackerCore();
+        Report report = new Report();
 
         // Dynamic generation of random transactions
         // Prepare 10 unique people
@@ -31,8 +32,8 @@ public class Main {
 
         Random rand = new Random();
         int transactionId = 1;
-        int maxPayments = 1000;
-        int totalGroups = 10000; // number of payer groups
+        int maxPayments = 10;
+        int totalGroups = 100; // number of payer groups
 
         // Generate transactions with random group sizes
         for (int g = 0; g < totalGroups; g++) {

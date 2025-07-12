@@ -10,7 +10,7 @@ public class Expense {
     private Integer payerAmt;
     private HashMap<String, Integer> friendOweMuch;
 
-    public Expense(String itemName, Integer totalAmount, String payerName, Integer payerAmt, HashMap<String, Integer> friendOweMuch){
+        public Expense(String itemName, Integer totalAmount, String payerName, Integer payerAmt, HashMap<String, Integer> friendOweMuch){
         this.itemName = itemName;
         this.totalAmount = totalAmount;
         this.payerName = payerName;
